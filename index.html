@@ -16,265 +16,54 @@
       --muted: #64748b;
       --heading: #f8fafc;
     }
-
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Sora', sans-serif;
-      font-size: 15px;
-      line-height: 1.75;
-      min-height: 100vh;
-    }
-
-    /* Top bar */
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(13,15,20,0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      padding: 14px 32px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .topbar .logo {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 13px;
-      color: var(--accent);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
+    body { background: var(--bg); color: var(--text); font-family: 'Sora', sans-serif; font-size: 15px; line-height: 1.75; min-height: 100vh; }
+    .topbar { position: sticky; top: 0; z-index: 10; background: rgba(13,15,20,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 14px 32px; display: flex; align-items: center; gap: 12px; }
+    .topbar .logo { font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; }
     .topbar .sep { color: var(--border); }
     .topbar .doc-title { font-size: 13px; color: var(--muted); }
-
-    /* Hero */
-    .hero {
-      padding: 72px 32px 48px;
-      max-width: 760px;
-      margin: 0 auto;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: var(--accent-soft);
-      border: 1px solid rgba(59,130,246,0.25);
-      border-radius: 100px;
-      padding: 4px 14px;
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 11px;
-      color: var(--accent);
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      margin-bottom: 24px;
-    }
-
-    .badge::before {
-      content: '';
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: var(--accent);
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
-    }
-
-    h1 {
-      font-size: clamp(28px, 5vw, 42px);
-      font-weight: 700;
-      color: var(--heading);
-      line-height: 1.2;
-      margin-bottom: 16px;
-      letter-spacing: -0.02em;
-    }
-
-    .hero-meta {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    /* Content */
-    .content {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 0 32px 100px;
-    }
-
-    .divider {
-      height: 1px;
-      background: var(--border);
-      margin-bottom: 48px;
-    }
-
-    .section {
-      margin-bottom: 48px;
-      animation: fadeUp 0.4s ease both;
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(16px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .section-num {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 11px;
-      color: var(--accent);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-
-    h2 {
-      font-size: 18px;
-      font-weight: 600;
-      color: var(--heading);
-      margin-bottom: 16px;
-      letter-spacing: -0.01em;
-    }
-
+    .hero { padding: 72px 32px 48px; max-width: 760px; margin: 0 auto; }
+    .badge { display: inline-flex; align-items: center; gap: 6px; background: var(--accent-soft); border: 1px solid rgba(59,130,246,0.25); border-radius: 100px; padding: 4px 14px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--accent); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 24px; }
+    .badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    h1 { font-size: clamp(28px, 5vw, 42px); font-weight: 700; color: var(--heading); line-height: 1.2; margin-bottom: 16px; letter-spacing: -0.02em; }
+    .hero-meta { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted); }
+    .content { max-width: 760px; margin: 0 auto; padding: 0 32px 100px; }
+    .divider { height: 1px; background: var(--border); margin-bottom: 48px; }
+    .section { margin-bottom: 48px; }
+    .section-num { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; }
+    h2 { font-size: 18px; font-weight: 600; color: var(--heading); margin-bottom: 16px; letter-spacing: -0.01em; }
     p { color: var(--text); margin-bottom: 12px; }
-
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 12px 0;
-    }
-
-    ul li {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      padding: 6px 0;
-      color: var(--text);
-    }
-
-    ul li::before {
-      content: '—';
-      color: var(--accent);
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 12px;
-      flex-shrink: 0;
-      margin-top: 3px;
-    }
-
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 20px 24px;
-      margin-top: 16px;
-    }
-
-    .card-title {
-      font-size: 12px;
-      font-family: 'IBM Plex Mono', monospace;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 12px;
-    }
-
-    .permission-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      padding: 12px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
+    ul { list-style: none; padding: 0; margin: 12px 0; }
+    ul li { display: flex; align-items: flex-start; gap: 10px; padding: 6px 0; color: var(--text); }
+    ul li::before { content: '—'; color: var(--accent); font-family: 'IBM Plex Mono', monospace; font-size: 12px; flex-shrink: 0; margin-top: 3px; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-top: 16px; }
+    .card-title { font-size: 12px; font-family: 'IBM Plex Mono', monospace; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; }
+    .permission-item { display: flex; align-items: flex-start; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--border); }
     .permission-item:last-child { border-bottom: none; }
-
-    .perm-icon {
-      width: 32px; height: 32px;
-      border-radius: 8px;
-      background: var(--accent-soft);
-      border: 1px solid rgba(59,130,246,0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
-      flex-shrink: 0;
-    }
-
-    .perm-name {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--heading);
-      margin-bottom: 2px;
-    }
-
+    .perm-icon { width: 32px; height: 32px; border-radius: 8px; background: var(--accent-soft); border: 1px solid rgba(59,130,246,0.2); display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+    .perm-name { font-size: 13px; font-weight: 600; color: var(--heading); margin-bottom: 2px; }
     .perm-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-top: 16px;
-    }
-
-    .contact-item {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 16px 18px;
-    }
-
-    .contact-label {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 10px;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 6px;
-    }
-
-    .contact-value {
-      font-size: 13px;
-      color: var(--heading);
-      font-weight: 500;
-      word-break: break-all;
-    }
-
-    .contact-value a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+    .contact-item { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; }
+    .contact-label { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
+    .contact-value { font-size: 13px; color: var(--heading); font-weight: 500; word-break: break-all; }
+    .contact-value a { color: var(--accent); text-decoration: none; }
     .contact-value a:hover { text-decoration: underline; }
-
-    @media (max-width: 600px) {
-      .topbar { padding: 12px 20px; }
-      .hero, .content { padding-left: 20px; padding-right: 20px; }
-      .contact-grid { grid-template-columns: 1fr; }
-    }
+    @media (max-width: 600px) { .topbar { padding: 12px 20px; } .hero, .content { padding-left: 20px; padding-right: 20px; } .contact-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
-
 <div class="topbar">
   <span class="logo">Nasiyachi</span>
   <span class="sep">·</span>
   <span class="doc-title">Privacy Policy</span>
 </div>
-
 <div class="hero">
   <div class="badge">Legal Document</div>
   <h1>Privacy Policy</h1>
-  <p class="hero-meta">Last updated: 2026 &nbsp;·&nbsp; Nasiyachi App</p>
+  <p class="hero-meta">Last updated: March 8, 2026 &nbsp;·&nbsp; Nasiyachi App</p>
 </div>
-
 <div class="content">
   <div class="divider"></div>
 
@@ -333,8 +122,10 @@
     <ul>
       <li>Opening the device's default SMS application with a pre-written message</li>
       <li>Opening the device phone dialer when the user chooses to call a customer</li>
+      <li>Sending SMS reminder messages through an integrated third-party SMS service</li>
     </ul>
-    <p style="margin-top:12px;">The application does not automatically send SMS messages or make phone calls.</p>
+    <p style="margin-top:12px;">For automated SMS delivery, the application may use a third-party SMS provider (Eskiz.uz). When the user sends a reminder message, the customer's phone number and message content may be sent to the Eskiz SMS service to deliver the message. SMS messages may be delivered from a short service number (for example, 4546) depending on the SMS provider configuration.</p>
+    <p>The application does not automatically send SMS messages or make phone calls without user action.</p>
   </div>
 
   <div class="section">
@@ -343,38 +134,23 @@
     <div class="card">
       <div class="permission-item">
         <div class="perm-icon">🌐</div>
-        <div>
-          <div class="perm-name">Internet</div>
-          <div class="perm-desc">Used to communicate with the backend server and synchronize data.</div>
-        </div>
+        <div><div class="perm-name">Internet</div><div class="perm-desc">Used to communicate with the backend server and synchronize data.</div></div>
       </div>
       <div class="permission-item">
         <div class="perm-icon">📶</div>
-        <div>
-          <div class="perm-name">Network State</div>
-          <div class="perm-desc">Used to check whether the device has an active internet connection.</div>
-        </div>
+        <div><div class="perm-name">Network State</div><div class="perm-desc">Used to check whether the device has an active internet connection.</div></div>
       </div>
       <div class="permission-item">
         <div class="perm-icon">📞</div>
-        <div>
-          <div class="perm-name">Phone Call</div>
-          <div class="perm-desc">Used only to open the device phone dialer when the user chooses to call a customer.</div>
-        </div>
+        <div><div class="perm-name">Phone Call</div><div class="perm-desc">Used only to open the device phone dialer when the user chooses to call a customer.</div></div>
       </div>
       <div class="permission-item">
         <div class="perm-icon">🖼️</div>
-        <div>
-          <div class="perm-name">Storage / Media Images</div>
-          <div class="perm-desc">Used to allow users to select a profile image from the device gallery.</div>
-        </div>
+        <div><div class="perm-name">Storage / Media Images</div><div class="perm-desc">Used to allow users to select a profile image from the device gallery.</div></div>
       </div>
       <div class="permission-item">
         <div class="perm-icon">🔐</div>
-        <div>
-          <div class="perm-name">Biometric Authentication</div>
-          <div class="perm-desc">Used for optional biometric login such as fingerprint or device biometric security. Biometric data is processed only by the device operating system and is not stored by the application.</div>
-        </div>
+        <div><div class="perm-name">Biometric Authentication</div><div class="perm-desc">Used for optional biometric login such as fingerprint or device biometric security. Biometric data is processed only by the device operating system and is not stored by the application.</div></div>
       </div>
     </div>
   </div>
@@ -400,7 +176,15 @@
   <div class="section">
     <div class="section-num">08</div>
     <h2>Third-Party Services</h2>
-    <p>The application uses Google Firebase Remote Config to manage application configuration and version information. Firebase services operate under Google's Privacy Policy. The application does not share personal user data with Firebase.</p>
+    <p>The application uses third-party services to provide certain features. These services include:</p>
+    <ul>
+      <li>Google Firebase Remote Config – used to manage application configuration and version information</li>
+      <li>
+Eskiz SMS Service (<a href="https://eskiz.uz" target="_blank">https://eskiz.uz</a>) – 
+used to deliver SMS reminder messages when a user chooses to send them
+</li>
+    </ul>
+    <p style="margin-top:12px;">These services operate under their own privacy policies. The application only sends the minimum required data (such as phone number and message text) necessary to deliver SMS messages when requested by the user.</p>
   </div>
 
   <div class="section">
@@ -434,7 +218,9 @@
   <div class="section">
     <div class="section-num">12</div>
     <h2>Children's Privacy</h2>
-    <p>This app is rated 3+ on Google Play. It is intended for business use, and content is suitable for children aged 3 and above.</p>
+    <p>This application is intended for business use by shop owners and adults managing customer debts. 
+The app does not knowingly collect personal information from children. 
+The application is rated 3+ on Google Play.</p>
   </div>
 
   <div class="section">
